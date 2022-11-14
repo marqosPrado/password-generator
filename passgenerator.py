@@ -1,10 +1,27 @@
+import random
+import platform, os
+
+sO = platform.system()
+if sO == "Linux" or "macOS":
+    os.system('clear')
+if sO == "Windows":
+    os.system('cls')
+
 """
-describe: password generator simple to my first commit on github
+Describe: password generator simple to my first commit on github
 Version: v1.0
 Autor: Marcos Prado
 """
 
-import random
+print("""                                                                         
+ _____                             _    _____                     _           
+|  _  |___ ___ ___ _ _ _ ___ ___ _| |  |   __|___ ___ ___ ___ ___| |_ ___ ___ 
+|   __| .'|_ -|_ -| | | | . |  _| . |  |  |  | -_|   | -_|  _| .'|  _| . |  _|
+|__|  |__,|___|___|_____|___|_| |___|  |_____|___|_|_|___|_| |__,|_| |___|_|  
+
+Version: v1.0
+Autor: Marcos Prado                                                                
+""")
 
 possCarac = [
     '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
@@ -18,21 +35,29 @@ possCarac = [
     '}', '~', '_', '|'
 ]
 
+caracSenha = input("[*] How much caracter:  ")
+cond = caracSenha.isnumeric()
 
-caracSenha = int(input("[*] Digite a quantidade de caracteres as senhas terão: "))
+while cond == False:
+    print("Only number...")
+    caracSenha = input("[*] How much caracter:  ")
+    if caracSenha.isnumeric() == True:
+        cond = True
+
 carac = 1
 poss = []
 listSenhas = ''
 
-while carac <= caracSenha:
+while carac <= int(caracSenha):
     poss.append(random.choice(possCarac))
     carac += 1
 
 for i in poss:
     listSenhas += i
 
+print('\n')
 print('='*50)    
-print(f"Senha: {listSenhas}")
+print(f"Password: {listSenhas}")
 print('='*50)
 
-print("Fique seguro!")  
+print("Stay safe!")
