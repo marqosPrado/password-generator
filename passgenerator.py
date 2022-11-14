@@ -1,3 +1,9 @@
+"""
+describe: password generator simple to my first commit on github
+Version: v1.0
+Autor: Marcos Prado
+"""
+
 import random
 
 possCarac = [
